@@ -36,7 +36,7 @@ export const Footer = () => (
         </div>
       </div>
       <div className="mt-8 border-t border-border pt-8 text-center text-sm text-muted-foreground">
-        © 2024 EduMali. Fait avec ❤️ pour les étudiants du Mali.
+        © 2026 EduMali. Fait avec par levisco el santo pour les étudiants du Mali.
       </div>
     </div>
   </footer>
