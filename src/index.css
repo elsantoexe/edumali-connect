@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    /* Fond principal légèrement moins sombre pour réduire l'effet "tout noir" */
+    --background: 220 13% 9%;
+    --foreground: 210 20% 94%;
+
+    /* Cartes : surfaces visibles avec élévation */
+    --card: 220 13% 12%;
+    --card-foreground: 210 20% 94%;
+
+    --popover: 220 13% 13%;
+    --popover-foreground: 210 20% 94%;
+
+    /* Vert Mali */
+    --primary: 145 58% 28%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Surface secondaire */
+    --secondary: 220 13% 16%;
+    --secondary-foreground: 210 20% 94%;
+
+    --muted: 220 13% 16%;
+    --muted-foreground: 215 15% 58%;
+
+    /* Or Mali */
+    --accent: 45 93% 53%;
+    --accent-foreground: 220 13% 9%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Bordures plus visibles */
+    --border: 220 13% 20%;
+    --input: 220 13% 18%;
+    --ring: 145 58% 28%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 220 13% 10%;
+    --sidebar-foreground: 210 20% 94%;
+    --sidebar-primary: 145 58% 28%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 13% 16%;
+    --sidebar-accent-foreground: 210 20% 94%;
+    --sidebar-border: 220 13% 20%;
+    --sidebar-ring: 145 58% 28%;
+
+    /* Couleurs custom EduMali */
+    --mali-green: #1B6B3A;
+    --mali-gold: #F5C518;
+    --surface-1: hsl(220 13% 12%);
+    --surface-2: hsl(220 13% 16%);
+    --surface-3: hsl(220 13% 20%);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: hsl(220 13% 12%); }
+  ::-webkit-scrollbar-thumb { background: hsl(220 13% 28%); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: hsl(145 58% 28%); }
+}
+
+@layer utilities {
+  .surface-card {
+    @apply bg-card border border-border rounded-xl shadow-sm;
+  }
+  .surface-elevated {
+    @apply bg-card border border-border rounded-xl shadow-md;
+  }
+  .text-gradient-mali {
+    background: linear-gradient(135deg, #1B6B3A, #F5C518);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .badge-free {
+    @apply inline-flex items-center gap-1 rounded-full border border-border bg-secondary px-2 py-0.5 text-xs font-medium text-muted-foreground;
+  }
+  .badge-premium {
+    @apply inline-flex items-center gap-1 rounded-full border border-accent/40 bg-accent/10 px-2 py-0.5 text-xs font-medium text-accent;
+  }
+  .badge-formateur {
+    @apply inline-flex items-center gap-1 rounded-full border border-primary/40 bg-primary/10 px-2 py-0.5 text-xs font-medium text-primary;
+  }
+  /* Espace pour la bottom nav sur mobile */
+  .pb-safe {
+    padding-bottom: calc(4rem + env(safe-area-inset-bottom));
+  }
+}
